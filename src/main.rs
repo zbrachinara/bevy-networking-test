@@ -16,9 +16,10 @@ use bevy_renet::{
     RenetClientPlugin, RenetServerPlugin,
 };
 
+#[derive(Debug)]
 enum Message {
-    Left,
-    Right,
+    Ping(u32),
+    Pong(u32),
 }
 
 const SERVER_ADDR: SocketAddr = SocketAddr::new(IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1)), 5000);
